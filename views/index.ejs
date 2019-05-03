@@ -5,19 +5,9 @@
     <title></title>
   </head>
   <body>
-    <h1>Index page</h1>
-    <div class="container">
-      <% for (let i = 0; i < products.length; i ++) { %>
-        <div class="product">
-          <a href="/shop/<%=products[i].id%>">
-          <h3><%= products[i].brand%></h3>
-          <h3><%= products[i].model%></h3>
-          <img src="<%= products[i].imageURL%>" alt="Picture of shoe">
-          <h4>Price: $<%= products[i].price%></h4>
-          </a>
-        </div>
-      <%}%>
-
-    </div>
+    <h1>REUSE</h1>
+      <h2>Consignment Platform</h2>
+      <a href="/footwear">Shop Footwear</a>
+      <a href="#">Shop Clothing</a>
   </body>
 </html>

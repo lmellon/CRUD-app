@@ -5,17 +5,20 @@ const Footwear = require('../models/footwear.js');
 const seedProducts = require('../models/seed_footwear.js');
 
 // use model and seed to create gallery
-ftwrrouter.get('/seed', (req,res) => {
+ftwrrouter.get('/footwear/seed', (req,res) => {
   Footwear.create(seedProducts,() => {
-    res.send('footwear listed');
+    res.redirect('/footwear');
   });
 });
 
 ftwrrouter.get('/',(req,res) => {
+  console.log("is this rerouting?");
   Footwear.find({}, (error, productData)=> {
-  res.render('index.ejs',{
+  res.render('footwear/footwear-index.ejs',{
     products: productData
     });
   });
 });
+
+
 module.exports = ftwrrouter;
