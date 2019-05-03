@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">HOME</a>
+      <a href="/footwear">GALLERY</a>
+    </nav>
+    <div class="product-container">
+      <div class="item-info"
+        <h3><%=shoes.brand%></h3>
+        <h3><%=shoes.model%></h3>
+        <img src="<%=shoes.imageURL%>" alt="Picture of <%=shoes.model%>">
+        <h4>Size: <%=shoes.size%></h4>
+        <h4>Price: $<%=shoes.price%></h4>
+        <h4>Qty Available: <%=shoes.quantity%></h4>
+
+      <form action="/shop/<%=shoes.id%>?_method=DELETE" method="POST">
+        <input class="submit-btn" type="submit" value="DELETE" />
+      </form>
+      <% if ( shoes.quantity > 0) { %>
+        <form action="/buy/<%=shoes.id%>?_method=PUT" method="POST">
+          <input class="submit-btn" type="submit" value="BUY" >
+        </form>
+        <% } else { %>
+          <h3>Out Of Stock</h3>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

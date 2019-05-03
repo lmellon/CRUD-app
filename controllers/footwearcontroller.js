@@ -11,6 +11,7 @@ ftwrrouter.get('/seed', (req,res) => {
   });
 });
 
+// INDEX ROUTE
 ftwrrouter.get('/',(req,res) => {
   Footwear.find({}, (error, productData)=> {
   res.render('footwear/footwear-index.ejs',{
@@ -19,5 +20,13 @@ ftwrrouter.get('/',(req,res) => {
   });
 });
 
+//SHOW ROUTE
+ftwrrouter.get('/:id', (req,res) => {
+  Footwear.findById(req.params.id, (error,foundItem) => {
+    res.render('footwear/footwear-show.ejs', {
+      shoes: foundItem
+    });
+  });
+});
 
 module.exports = ftwrrouter;
