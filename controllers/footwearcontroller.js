@@ -11,6 +11,14 @@ ftwrrouter.get('/seed', (req,res) => {
   });
 });
 
+
+// DELETE ROUTE
+ftwrrouter.delete('/:id',(req,res) => {
+  Footwear.findByIdAndRemove(req.params.id, (error, data) => {
+    res.redirect('/footwear');
+  });
+});
+
 // INDEX ROUTE
 ftwrrouter.get('/',(req,res) => {
   Footwear.find({}, (error, productData)=> {

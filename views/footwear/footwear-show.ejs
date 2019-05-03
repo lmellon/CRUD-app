@@ -18,11 +18,11 @@
         <h4>Price: $<%=shoes.price%></h4>
         <h4>Qty Available: <%=shoes.quantity%></h4>
 
-      <form action="/shop/<%=shoes.id%>?_method=DELETE" method="POST">
+      <form action="/footwear/<%=shoes.id%>?_method=DELETE" method="POST">
         <input class="submit-btn" type="submit" value="DELETE" />
       </form>
       <% if ( shoes.quantity > 0) { %>
-        <form action="/buy/<%=shoes.id%>?_method=PUT" method="POST">
+        <form action="/footwear/<%=shoes.id%>?_method=PUT" method="POST">
           <input class="submit-btn" type="submit" value="BUY" >
         </form>
         <% } else { %>
