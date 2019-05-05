@@ -1,7 +1,7 @@
 module.exports = [
   {
     style: 'Athletic',
-    gender: 'Men',
+    gender: 'Mens',
     brand: 'Mizuno',
     model: 'Wave Rider 22 Knit',
     imageURL: "/images/WaveRider22.jpg",
@@ -11,7 +11,7 @@ module.exports = [
   },
   {
     style: 'Athletic',
-    gender: 'Men',
+    gender: 'Mens',
     brand: 'Mizuno',
     model: 'Peach Tree Run Wave Rider 2018',
     imageURL: "/images/peachrunwaverider.jpg",
@@ -21,7 +21,7 @@ module.exports = [
   },
   {
     style: 'Athletic',
-    gender: 'Men',
+    gender: 'Mens',
     brand: 'Mizuno',
     model: 'Wave Rider 22',
     imageURL: "/images/blue&blackwaverider.jpg",
@@ -31,7 +31,7 @@ module.exports = [
   },
   {
     style: 'Athletic',
-    gender: 'Men',
+    gender: 'Mens',
     brand: 'adidas',
     model: 'UltraBoost 2019',
     imageURL: "/images/Boost19.jpg",
@@ -41,7 +41,7 @@ module.exports = [
   },
   {
     style: 'Athletic',
-    gender: 'Men',
+    gender: 'Mens',
     brand: 'Asics',
     model: 'Gel Noosa',
     imageURL: "/images/asicsnoosa.jpg",
@@ -51,7 +51,7 @@ module.exports = [
   },
   {
     style: 'Athletic',
-    gender: 'Men',
+    gender: 'Mens',
     brand: 'Asics',
     model: 'Tiger',
     imageURL: "/images/asicstiger.jpg",

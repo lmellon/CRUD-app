@@ -11,6 +11,11 @@ ftwrrouter.get('/seed', (req,res) => {
   });
 });
 
+// NEW ROUTE
+ftwrrouter.get('/new',(req,res) => {
+  res.render('footwear/footwear-new.ejs');
+});
+
 
 // DELETE ROUTE
 ftwrrouter.delete('/:id',(req,res) => {
@@ -34,6 +39,14 @@ ftwrrouter.get('/:id', (req,res) => {
     res.render('footwear/footwear-show.ejs', {
       shoes: foundItem
     });
+  });
+});
+
+// POST ROUTE
+ftwrrouter.post('/', (req,res) => {
+  console.log('post route');
+  Footwear.create(req.body,(error,createdItem) => {
+    res.redirect('/footwear');
   });
 });
 

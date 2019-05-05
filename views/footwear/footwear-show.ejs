@@ -8,9 +8,12 @@
     <nav>
       <a href="/">HOME</a>
       <a href="/footwear">GALLERY</a>
+      <a href="/footwear/new">NEW LISTING</a>
     </nav>
     <div class="product-container">
-      <div class="item-info"
+      <div class="item-info">
+        <h3>Style: <%=shoes.style%></h3>
+        <h3><%=shoes.gender%></h3>
         <h3><%=shoes.brand%></h3>
         <h3><%=shoes.model%></h3>
         <img src="<%=shoes.imageURL%>" alt="Picture of <%=shoes.model%>">
