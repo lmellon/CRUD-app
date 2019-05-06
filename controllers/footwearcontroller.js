@@ -11,13 +11,37 @@ ftwrrouter.get('/seed', (req,res) => {
   });
 });
 
+// EDIT ROUTE
+// part 2 of editing a listing.  takes info you entered and puts it in place on the id page.
+ftwrrouter.put('/:id', (req,res) => {
+  Footwear.findByIdAndUpdate(req.params.id, req.body,{new:true},(error, updatedItem) => {
+    res.render('footwear/footwear-show.ejs',{
+      shoes: updatedItem
+    });
+  });
+});
+
+
+// EDIT ROUTE
+// part 1. go to an edit page and get the info
+ftwrrouter.get('/:id/edit',(req,res) => {
+  Footwear.findById(req.params.id, (error, foundItem) => {
+    res.render('footwear/footwear-edit.ejs', {
+      shoes: foundItem
+    });
+  });
+});
+
+
 // NEW ROUTE
+// takes you to the page where you can create a new listing.
 ftwrrouter.get('/new',(req,res) => {
   res.render('footwear/footwear-new.ejs');
 });
 
 
 // DELETE ROUTE
+// removes an item completely and brings you back to the footwear index page
 ftwrrouter.delete('/:id',(req,res) => {
   Footwear.findByIdAndRemove(req.params.id, (error, data) => {
     res.redirect('/footwear');
@@ -25,6 +49,7 @@ ftwrrouter.delete('/:id',(req,res) => {
 });
 
 // INDEX ROUTE
+// displays the seed items on the index page of the footwear category
 ftwrrouter.get('/',(req,res) => {
   Footwear.find({}, (error, productData)=> {
   res.render('footwear/footwear-index.ejs',{
@@ -34,6 +59,7 @@ ftwrrouter.get('/',(req,res) => {
 });
 
 //SHOW ROUTE
+// displays all the details of the product on its own page
 ftwrrouter.get('/:id', (req,res) => {
   Footwear.findById(req.params.id, (error,foundItem) => {
     res.render('footwear/footwear-show.ejs', {
@@ -43,6 +69,7 @@ ftwrrouter.get('/:id', (req,res) => {
 });
 
 // POST ROUTE
+// part 2 of creating a new listing.  this takes the info you entered and dispalys it on the index page as the next listed item
 ftwrrouter.post('/', (req,res) => {
   console.log('post route');
   Footwear.create(req.body,(error,createdItem) => {
