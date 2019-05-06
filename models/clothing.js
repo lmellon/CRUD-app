@@ -11,7 +11,7 @@ const clothingSchema = Schema ({
   brand: { type: String, required: true },
   model: String,
   imageURL: String,
-  size: { any: {} },
+  size: { any: Schema.Types.Mixed },
   quantity: { type: Number, min: 1 },
   price: { type: Number, min: 1}
 });

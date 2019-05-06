@@ -50,7 +50,7 @@ ftwrrouter.get('/new',(req,res) => {
 // DELETE ROUTE
 // removes an item completely and brings you back to the footwear index page
 ftwrrouter.delete('/:id',(req,res) => {
-  Footwear.findByIdAndRemove(req.params.id, (error, data) => {
+  Footwear.findByIdAndDelete(req.params.id, (error, data) => {
     res.redirect('/footwear');
   });
 });

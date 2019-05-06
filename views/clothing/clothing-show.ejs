@@ -4,6 +4,37 @@
     <% include ../partials/head.ejs %>
   </head>
   <body>
+    <header>
+      <h1>Product Details</h1>
+    </header>
+    <nav>
+      <a class="nav-link" href="/">HOME</a>
+      <a class="nav-link" href="/clothing">GALLERY</a>
+      <a class="nav-link" href="/clothing/new">NEW LISTING</a>
+      <a class="nav-link" href="/clothing/<%=clothes.id%>/edit" class="nav-btn">EDIT LISTING</a>
+    </nav>
+    <div class="product-container">
+      <div class="item-info">
+        <h3>Style: <%=clothes.style%></h3>
+        <h3><%=clothes.gender%></h3>
+        <h3><%=clothes.brand%></h3>
+        <h3><%=clothes.model%></h3>
+        <img src="<%=clothes.imageURL%>" alt="Picture of <%=clothes.model%>">
+        <h4>Size: <%=clothes.size%></h4>
+        <h4>Price: $<%=clothes.price%></h4>
+        <h4>Qty Available: <%=clothes.quantity%></h4>
 
+      <form action="/clothing/<%=clothes.id%>?_method=DELETE" method="POST">
+        <input class="submit-btn" type="submit" value="DELETE" />
+      </form>
+      <% if ( clothes.quantity > 0) { %>
+        <form action="/clothing/<%=clothes.id%>?_method=PUT" method="POST">
+          <input class="submit-btn" type="submit" value="BUY" >
+        </form>
+        <% } else { %>
+          <h3>Out Of Stock</h3>
+        <% } %>
+      </div>
+    </div>
   </body>
 </html>
