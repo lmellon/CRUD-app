@@ -4,6 +4,48 @@
     <% include ../partials/head.ejs %>
   </head>
   <body>
-
+    <header>
+      <h1>Edit Listing</h1>
+    </header>
+    <nav>
+      <a class="nav-link" href="/">HOME</a>
+      <a class="nav-link" href="/clothing">GALLERY</a>
+      <a class="nav-link" href="/clothing/new">NEW LISTING</a>
+    </nav>
+    <form class="" action="/clothing/<%=clothes.id%>?_method=PUT" method="POST">
+      <label>
+        Style
+        <input type="text" name="style" value="<%=clothes.style%>">
+      </label>
+      <label>
+        Gender
+        <input type="text" name="gender" value="<%=clothes.gender%>">
+      </label>
+      <label>
+        Brand
+        <input type="text" name="brand" value="<%=clothes.brand%>">
+      </label>
+      <label>
+        Model
+        <input type="text" name="model" value="<%=clothes.model%>">
+      </label>
+      <label>
+        Image URL
+        <input type="text" name="imageURL" value="<%=clothes.imageURL%>">
+      </label>
+      <label>
+        Size
+        <input type="text" name="size" value="<%=clothes.size%>">
+      </label>
+      <label>
+        Price
+        <input type="text" name="price" value="<%=clothes.price%>">
+      </label>
+      <label>
+        Quantity
+        <input type="text" name="quantity" value="<%=clothes.quantity%>">
+      </label>
+    <input class="submit-btn" type="submit" value="Update Listing">
+    </form>
   </body>
 </html>

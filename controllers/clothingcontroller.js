@@ -10,6 +10,24 @@ const Clothing = require('../models/clothing.js');
 // RESTful Routes
 //++++++++++++++++++++++++++++
 
+// PUT ROUTE
+clothrouter.put('/:id', (req,res) => {
+  Clothing.findByIdAndUpdate(req.params.id, req.body, { new: true}, (error, updatedItem) => {
+    res.render('clothing/clothing-show.ejs',{
+      clothes: updatedItem
+    })
+  });
+});
+
+// EDIT ROUTE
+clothrouter.get('/:id/edit', (req,res) => {
+  Clothing.findById(req.params.id,(error,foundItem) => {
+    res.render('clothing/clothing-edit.ejs', {
+      clothes: foundItem
+    });
+  });
+});
+
 // NEW ROUTE
 clothrouter.get('/new',(req,res) => {
   res.render('clothing/clothing-new.ejs')
