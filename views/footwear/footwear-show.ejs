@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <% include ../partials/head.ejs %>
   </head>
   <body>
+    <header>
+      <h1>Product Details</h1>
+    </header>
     <nav>
-      <a href="/">HOME</a>
-      <a href="/footwear">GALLERY</a>
-      <a href="/footwear/new">NEW LISTING</a>
-      <a href="/footwear/<%=shoes.id%>/edit" class="nav-btn">EDIT LISTING</a>
+      <a class="nav-link" href="/">HOME</a>
+      <a class="nav-link" href="/footwear">GALLERY</a>
+      <a class="nav-link" href="/footwear/new">NEW LISTING</a>
+      <a class="nav-link" href="/footwear/<%=shoes.id%>/edit" class="nav-btn">EDIT LISTING</a>
     </nav>
     <div class="product-container">
       <div class="item-info">

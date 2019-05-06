@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <% include ../partials/head.ejs %>
   </head>
   <body>
-    <h1>Edit Listing</h1>
+    <header>
+      <h1>Edit Listing</h1>
+    </header>
     <nav>
-      <a href="/">HOME</a>
-      <a href="/footwear">GALLERY</a>
-      <a href="/footwear/new">NEW LISTING</a>
+      <a class="nav-link" href="/">HOME</a>
+      <a class="nav-link" href="/footwear">GALLERY</a>
+      <a class="nav-link" href="/footwear/new">NEW LISTING</a>
     </nav>
     <form class="" action="/footwear/<%=shoes.id%>?_method=PUT" method="POST">
       <label>

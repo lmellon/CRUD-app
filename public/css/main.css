@@ -1,0 +1,31 @@
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+header {
+  background-color: #39ac39;
+  margin: 0;
+  padding: 2em;
+  text-align: center;
+  color: white;
+}
+nav {
+  background-color: white;
+  padding: 1em;
+}
+.nav-link {
+  color: #39ac39;
+  padding: 0.5em;
+  border:
+}
+.homepage-epa {
+  border: 1px #39ac39 solid;
+  padding: 1em;
+  margin: 1em 2em;
+}

@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <% include partials/head.ejs %>
   </head>
   <body>
-    <h1>REUSE</h1>
-      <h2>Consignment Platform</h2>
-      <a href="/footwear">Shop Footwear</a>
-      <a href="#">Shop Clothing</a>
+    <header>
+      <h1><strong>REUSE</strong></h1>
+      <h3>one person's trash is another person's teasure</h3>
+    </header>
+      <nav>
+        <a class="nav-link" href="/footwear">SHOP FOOTWEAR</a>
+        <a class="nav-link" href="/clothing">SHOP CLOTHING</a>
+      </nav>
+      <div class="homepage-center">
+        <div class="homepage-epa">
+          In 2015, the EPA reported that there were 11, 940 thousand tons of footwear and clothing generated and 8,240 thousand tons ended up in a landfill.
+          <a href="https://www.epa.gov/facts-and-figures-about-materials-waste-and-recycling/nondurable-goods-product-specific-data#ClothingandFootwear" class="sourceURL">(www.epa.gov)</a><br>
+          Consumers throw away shoes and clothing [versus recycle], an average of 70 pounds per person, annually.<a href="https://edgexpo.com/2016/07/20/how-wasteful-are-we-the-fashion-industrys-shocking-truth/">(www.edgexpo.com)</a><br>
+          Reusing clothes and shoes can help reduce the waste.
+        </div><br>
+        <img src="https://www.futurescienceleaders.com/yvr1a/wp-content/uploads/sites/123/2019/01/Utsunomiya_Tokamachi_Niigata_Prefecture_948-0000_Japan_-_panoramio.jpg" alt="clothing mountain">
+      </div>
   </body>
 </html>

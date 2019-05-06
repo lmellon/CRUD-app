@@ -66,3 +66,6 @@ app.listen(PORT, () => console.log( 'Listening on port:', PORT));
 //___________________
 const footwearController = require('./controllers/footwearcontroller.js');
 app.use('/footwear', footwearController);
+
+const clothingController = require('./controllers/clothingcontroller.js');
+app.use('/clothing', clothingController);

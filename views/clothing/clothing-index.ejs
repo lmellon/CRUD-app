@@ -5,19 +5,19 @@
   </head>
   <body>
     <header>
-      <h1>Footwear Index page</h1>
+      <h1>Clothing Index page</h1>
     </header>
     <nav>
       <a class="nav-link" href="/">HOME</a>
-      <a class="nav-link" href="/footwear/new">NEW LISTING</a>
+      <a class="nav-link" href="/clothing/new">NEW LISTING</a>
     </nav>
     <div class="container">
       <% for (let i = 0; i < products.length; i ++) { %>
         <div class="product">
-          <a href="/footwear/<%=products[i].id%>">
+          <a href="/clothing/<%=products[i].id%>">
           <h3><%= products[i].brand%></h3>
           <h3><%= products[i].model%></h3>
-          <img src="<%= products[i].imageURL%>" alt="Picture of shoe">
+          <img src="<%= products[i].imageURL%>" alt="Picture of item">
           <h4>Price: $<%= products[i].price%></h4>
           </a>
         </div>

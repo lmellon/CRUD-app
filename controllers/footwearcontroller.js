@@ -1,8 +1,11 @@
-// dependcies and configs for footwear controller
+//++++++++++++++++++++++++++++
+// Dependencies and configs for footwear controller
+//++++++++++++++++++++++++++++
 const express = require('express');
 const ftwrrouter = express.Router();
 const Footwear = require('../models/footwear.js');
 const seedProducts = require('../models/seed_footwear.js');
+
 
 // use model and seed to create gallery
 ftwrrouter.get('/seed', (req,res) => {
@@ -10,6 +13,10 @@ ftwrrouter.get('/seed', (req,res) => {
     res.redirect('footwear/footwear-index.ejs');
   });
 });
+
+//++++++++++++++++++++++++++++
+// RESTful Routes
+//++++++++++++++++++++++++++++
 
 // EDIT ROUTE
 // part 2 of editing a listing.  takes info you entered and puts it in place on the id page.
@@ -71,10 +78,10 @@ ftwrrouter.get('/:id', (req,res) => {
 // POST ROUTE
 // part 2 of creating a new listing.  this takes the info you entered and dispalys it on the index page as the next listed item
 ftwrrouter.post('/', (req,res) => {
-  console.log('post route');
   Footwear.create(req.body,(error,createdItem) => {
     res.redirect('/footwear');
   });
 });
 
+//++++++++++++++++++++++
 module.exports = ftwrrouter;
