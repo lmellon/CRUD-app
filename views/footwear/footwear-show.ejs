@@ -28,7 +28,7 @@
         <input class="submit-btn" type="submit" value="DELETE" />
       </form>
       <% if ( shoes.quantity > 0) { %>
-        <form action="/footwear/<%=shoes.id%>?_method=PUT" method="POST">
+        <form action="/footwear/add/<%=shoes.id%>?_method=PUT" method="POST">
           <input class="submit-btn" type="submit" value="ADD TO CART" >
         </form>
         <% } else { %>

@@ -18,6 +18,15 @@ clothrouter.get('/seed', (req,res) => {
 // RESTful Routes
 //++++++++++++++++++++++++++++
 
+// put route to adjust quantity
+clothrouter.put('/add/:id', (req,res) => {
+  Clothing.findByIdAndUpdate(req.params.id, {$inc:{quantity: -1}}, {new:true},(error, addedItem) => {
+    res.render('clothing/clothing-show.ejs',{
+      clothes: addedItem
+    });
+  });
+});
+
 // PUT ROUTE
 clothrouter.put('/:id', (req,res) => {
   Clothing.findByIdAndUpdate(req.params.id, req.body, { new: true}, (error, updatedItem) => {

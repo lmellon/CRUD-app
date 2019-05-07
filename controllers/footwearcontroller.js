@@ -18,6 +18,16 @@ ftwrrouter.get('/seed', (req,res) => {
 // RESTful Routes
 //++++++++++++++++++++++++++++
 
+// put route to adjust quantity
+ftwrrouter.put('/add/:id', (req,res) => {
+  Footwear.findByIdAndUpdate(req.params.id, {$inc:{quantity: -1}}, {new:true},(error, addedItem) => {
+    res.render('footwear/footwear-show.ejs',{
+      shoes: addedItem
+    });
+  });
+});
+
+
 // EDIT ROUTE
 // part 2 of editing a listing.  takes info you entered and puts it in place on the id page.
 ftwrrouter.put('/:id', (req,res) => {
