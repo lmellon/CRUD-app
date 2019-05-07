@@ -4,6 +4,14 @@
 const express = require('express');
 const clothrouter = express.Router();
 const Clothing = require('../models/clothing.js');
+const seedProducts = require('../models/seed_clothing.js')
+
+// use model and seed to create gallery
+clothrouter.get('/seed', (req,res) => {
+  Clothing.create(seedProducts,() => {
+    res.redirect('/');
+  });
+});
 
 
 //++++++++++++++++++++++++++++
