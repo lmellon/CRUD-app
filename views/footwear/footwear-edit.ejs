@@ -5,48 +5,59 @@
   </head>
   <body>
     <header>
-      <h1>Edit Listing</h1>
+      <h1>REUSE</h1>
+      <h2>Edit Footwear Listing</h2>
     </header>
     <nav>
       <a class="nav-link" href="/">HOME</a>
       <a class="nav-link" href="/footwear">GALLERY</a>
       <a class="nav-link" href="/footwear/new">NEW LISTING</a>
     </nav>
-    <form class="" action="/footwear/<%=shoes.id%>?_method=PUT" method="POST">
-      <label>
-        Style
-        <input type="text" name="style" value="<%=shoes.style%>">
-      </label>
-      <label>
-        Gender
-        <input type="text" name="gender" value="<%=shoes.gender%>">
-      </label>
-      <label>
-        Brand
-        <input type="text" name="brand" value="<%=shoes.brand%>">
-      </label>
-      <label>
-        Model
-        <input type="text" name="model" value="<%=shoes.model%>">
-      </label>
-      <label>
-        Image URL
-        <input type="text" name="imageURL" value="<%=shoes.imageURL%>">
-      </label>
-      <label>
-        Size
-        <input type="text" name="size" value="<%=shoes.size%>">
-      </label>
-      <label>
-        Price
-        <input type="text" name="price" value="<%=shoes.price%>">
-      </label>
-      <label>
-        Quantity
-        <input type="text" name="quantity" value="<%=shoes.quantity%>">
-      </label>
-    <input class="submit-btn" type="submit" value="Update Listing">
-    </form>
-
+    <div class="edit-new-container">
+      <form class="edit-new-form" action="/footwear/<%=shoes.id%>?_method=PUT" method="POST">
+        <div class="row">
+          <label>
+            Style
+            <input type="text" name="style" value="<%=shoes.style%>">
+          </label>
+          <label>
+            Gender
+            <input type="text" name="gender" value="<%=shoes.gender%>">
+          </label>
+          <label>
+            Brand
+            <input type="text" name="brand" value="<%=shoes.brand%>">
+          </label>
+          <label>
+            Model
+            <input type="text" name="model" value="<%=shoes.model%>">
+          </label>
+        </div>
+        <div class="row">
+          <label>
+            Image URL
+            <input type="text" name="imageURL" value="<%=shoes.imageURL%>">
+          </label>
+          <label>
+            Size
+            <input type="text" name="size" value="<%=shoes.size%>">
+          </label>
+          <label>
+            Price
+            <input type="text" name="price" value="<%=shoes.price%>">
+          </label>
+          <label>
+            Quantity
+            <input type="text" name="quantity" value="<%=shoes.quantity%>">
+          </label>
+        </div>
+      </form>
+      <div class="submit">
+        <input class="submit-btn" type="submit" value="Update Listing">
+      </div>
+    </div>
+    <footer>
+      <% include ../partials/footer.ejs %>
+    </footer>
   </body>
 </html>

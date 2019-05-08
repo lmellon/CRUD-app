@@ -131,20 +131,22 @@ input {
   padding: .5em;
   margin: 1em;
 }
-/* new listing page */
-.new-container {
+/* edit & new listing page */
+.edit-new-container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-content: center;
   margin: 3em;
 }
-.new-form {
-  width: 75%;
+.edit-new-form {
+  width: 80%;
   margin: 3em;
 }
-
-.new-submit {
-  margin: 3em;
+.submit {
+  margin-bottom: 5em;
+}
+.row {
+  margin: 2em;
 }
