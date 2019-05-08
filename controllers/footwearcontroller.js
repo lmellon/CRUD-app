@@ -6,7 +6,6 @@ const ftwrrouter = express.Router();
 const Footwear = require('../models/footwear.js');
 const seedProducts = require('../models/seed_footwear.js');
 
-
 // use model and seed to create gallery
 ftwrrouter.get('/seed', (req,res) => {
   Footwear.create(seedProducts,() => {
@@ -18,7 +17,6 @@ ftwrrouter.get('/seed', (req,res) => {
 // RESTful Routes
 //++++++++++++++++++++++++++++
 
-
 // put route to adjust quantity
 ftwrrouter.put('/add/:id', (req,res) => {
   Footwear.findByIdAndUpdate(req.params.id, {$inc:{quantity: -1}}, {new:true},(error, addedItem) => {
@@ -27,7 +25,6 @@ ftwrrouter.put('/add/:id', (req,res) => {
     });
   });
 });
-
 
 // EDIT ROUTE
 // part 2 of editing a listing.  takes info you entered and puts it in place on the id page.
@@ -50,13 +47,11 @@ ftwrrouter.get('/:id/edit',(req,res) => {
   });
 });
 
-
 // NEW ROUTE
 // takes you to the page where you can create a new listing.
 ftwrrouter.get('/new',(req,res) => {
   res.render('footwear/footwear-new.ejs');
 });
-
 
 // DELETE ROUTE
 // removes an item completely and brings you back to the footwear index page
@@ -79,13 +74,47 @@ ftwrrouter.get('/',(req,res) => {
 //  ROUTE FOR MENS FILTER
 ftwrrouter.get('/mens',(req,res) => {
   Footwear.find({gender: "Men's"}, (error, productData) => {
-    console.log(productData);
-    res.render('footwear/footwear-filtered-mens.ejs',{
+    res.render('footwear/footwear-index.ejs',{
       products: productData
     })
   });
 });
 
+// ROUTE FOR WOMENS FILTER
+ftwrrouter.get('/womens',(req,res) => {
+  Footwear.find({gender: "Women's"}, (error, productData) => {
+    res.render('footwear/footwear-index.ejs',{
+      products: productData
+    });
+  });
+});
+
+// ROUTE FOR ATHELTIC FILTER
+ftwrrouter.get('/athletic',(req,res) => {
+  Footwear.find({style: 'Athletic'}, (error, productData) => {
+    res.render('footwear/footwear-index.ejs',{
+      products: productData
+    });
+  });
+});
+
+//  ROUTE FOR CASUAL FILTER
+ftwrrouter.get('/casual',(req,res) => {
+  Footwear.find({style: 'Casual'}, (error, productData) => {
+    res.render('footwear/footwear-index.ejs',{
+      products: productData
+    });
+  });
+});
+
+//  ROUTE FOR MENS FILTER
+ftwrrouter.get('/dress',(req,res) => {
+  Footwear.find({style: "Dress"}, (error, productData) => {
+    res.render('footwear/footwear-index.ejs',{
+      products: productData
+    })
+  });
+});
 
 //SHOW ROUTE
 // displays all the details of the product on its own page

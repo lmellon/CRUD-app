@@ -13,7 +13,6 @@ clothrouter.get('/seed', (req,res) => {
   });
 });
 
-
 //++++++++++++++++++++++++++++
 // RESTful Routes
 //++++++++++++++++++++++++++++
@@ -60,6 +59,42 @@ clothrouter.delete('/:id',(req,res) => {
 // INDEX ROUTE
 clothrouter.get('/',(req,res) => {
   Clothing.find({},(error,productData) => {
+    res.render('clothing/clothing-index.ejs', {
+      products: productData
+    });
+  });
+});
+
+// MEN'S FILTER ROUTE
+clothrouter.get('/mens',(req,res) => {
+  Clothing.find({gender: "Men's"},(error,productData) => {
+    res.render('clothing/clothing-index.ejs', {
+      products: productData
+    });
+  });
+});
+
+// WOMEN'S FILTER ROUTE
+clothrouter.get('/womens',(req,res) => {
+  Clothing.find({gender: "Women's"},(error,productData) => {
+    res.render('clothing/clothing-index.ejs', {
+      products: productData
+    });
+  });
+});
+
+// ATHLETIC FILTER ROUTE
+clothrouter.get('/athletic',(req,res) => {
+  Clothing.find({style: "Athletic"},(error,productData) => {
+    res.render('clothing/clothing-index.ejs', {
+      products: productData
+    });
+  });
+});
+
+// CASUAL FILTER ROUTE
+clothrouter.get('/casual',(req,res) => {
+  Clothing.find({style: "Casual"},(error,productData) => {
     res.render('clothing/clothing-index.ejs', {
       products: productData
     });
