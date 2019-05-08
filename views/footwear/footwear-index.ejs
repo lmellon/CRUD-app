@@ -13,19 +13,28 @@
       <a class="nav-link" href="/footwear/new">NEW  FOOTWEAR LISTING</a>
       <a class="nav-link" href="/clothing">CLOTHING GALLERY</a>
     </nav>
-    <!-- container for item and its info -->
-    <div class="item-container">
-      <% for (let i = 0; i < products.length; i ++) { %>
-        <div class="item">
-          <a href="/footwear/<%=products[i].id%>">
-          <h3><%= products[i].gender%>
-            <%= products[i].brand%>
-            <%= products[i].model%></h3>
-          <img src="<%= products[i].imageURL%>" alt="Picture of shoe">
-          <h4>Price: $<%= products[i].price%></h4>
-          </a>
-        </div>
-      <%}%>
+    <!-- container for whole page -->
+    <div class="page">
+      <!-- filters sidebar -->
+      <div class="sidebar">
+          <h3>Sort By</h3>
+          <a class="sidebar-nav" href="/footwear/mens">Men's</a>
+          <a class="sidebar-nav" href="/footwear/mens">Women's</a>
+      </div>
+      <!-- container for item and its info -->
+      <div class="item-container">
+        <% for (let i = 0; i < products.length; i ++) { %>
+          <div class="item">
+            <a href="/footwear/<%=products[i].id%>">
+            <h3><%= products[i].gender%>
+              <%= products[i].brand%>
+              <%= products[i].model%></h3>
+            <img src="<%= products[i].imageURL%>" alt="Picture of shoe">
+            <h4>Price: $<%= products[i].price%></h4>
+            </a>
+          </div>
+        <%}%>
+      </div>
     </div>
     <footer>
       <% include ../partials/footer.ejs %>

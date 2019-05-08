@@ -2,6 +2,7 @@
 body {
   background-color: #f2f2f2;
   margin: 0;
+  color: #4d4d00;
 }
 a {
   text-decoration: none;
@@ -70,12 +71,28 @@ footer {
   color: #4d4d00;
 }
 /* gallery pages */
+.page {
+  display: flex;
+  justify-content: space-around;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+}
+.sidebar-nav {
+  color: #39ac39;
+  padding: 0.5em;
+  font-size: 1em;
+  color: #4d4d00;
+}
 .item-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   background-color: #f2f2f2;
+  width: 85%;
 }
 .item {
   border: 1px #39ac39 solid;
