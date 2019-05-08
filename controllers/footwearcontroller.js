@@ -18,6 +18,7 @@ ftwrrouter.get('/seed', (req,res) => {
 // RESTful Routes
 //++++++++++++++++++++++++++++
 
+
 // put route to adjust quantity
 ftwrrouter.put('/add/:id', (req,res) => {
   Footwear.findByIdAndUpdate(req.params.id, {$inc:{quantity: -1}}, {new:true},(error, addedItem) => {
@@ -69,11 +70,22 @@ ftwrrouter.delete('/:id',(req,res) => {
 // displays the seed items on the index page of the footwear category
 ftwrrouter.get('/',(req,res) => {
   Footwear.find({}, (error, productData)=> {
-  res.render('footwear/footwear-index.ejs',{
-    products: productData
+    res.render('footwear/footwear-index.ejs',{
+      products: productData
     });
   });
 });
+
+//  ROUTE FOR MENS FILTER
+ftwrrouter.get('/mens',(req,res) => {
+  Footwear.find({gender: "Men's"}, (error, productData) => {
+    console.log(productData);
+    res.render('footwear/footwear-filtered-mens.ejs',{
+      products: productData
+    })
+  });
+});
+
 
 //SHOW ROUTE
 // displays all the details of the product on its own page

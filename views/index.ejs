@@ -5,21 +5,34 @@
   </head>
   <body>
     <header>
-      <h1><strong>REUSE</strong></h1>
-      <h3>one person's trash is another person's teasure</h3>
+      <h1 class="name"><strong>REUSE</strong></h1>
+      <h2>where one person's trash is another person's teasure</h2>
     </header>
-      <nav>
-        <a class="nav-link" href="/footwear">SHOP FOOTWEAR</a>
-        <a class="nav-link" href="/clothing">SHOP CLOTHING</a>
-      </nav>
+      <!-- container for homepage -->
       <div class="homepage-center">
-        <div class="homepage-epa">
-          In 2015, the EPA reported that there were 11, 940 thousand tons of footwear and clothing generated and 8,240 thousand tons ended up in a landfill.
-          <a href="https://www.epa.gov/facts-and-figures-about-materials-waste-and-recycling/nondurable-goods-product-specific-data#ClothingandFootwear" class="sourceURL">(www.epa.gov)</a><br>
-          Consumers throw away shoes and clothing [versus recycle], an average of 70 pounds per person, annually.<a href="https://edgexpo.com/2016/07/20/how-wasteful-are-we-the-fashion-industrys-shocking-truth/">(www.edgexpo.com)</a><br>
-          Reusing clothes and shoes can help reduce the waste.
-        </div><br>
+        <!-- image on left side -->
+        <!-- <div class="left-img" -->
         <img src="https://www.futurescienceleaders.com/yvr1a/wp-content/uploads/sites/123/2019/01/Utsunomiya_Tokamachi_Niigata_Prefecture_948-0000_Japan_-_panoramio.jpg" alt="clothing mountain">
+        <!-- </div> -->
+        <!-- right side -->
+        <div class="call2action">
+          <!-- info -->
+          <div class="stats">
+            In 2015, the EPA reported that there were 11, 940 thousand tons of footwear and clothing generated and 8,240 thousand tons ended up in a landfill.
+            <a href="https://www.epa.gov/facts-and-figures-about-materials-waste-and-recycling/nondurable-goods-product-specific-data#ClothingandFootwear" class="sourceURL" target="_blank">(www.epa.gov)</a><br><br>
+            "Consumers throw away shoes and clothing [versus recycle], an average of 70 pounds per person, annually."<a href="https://edgexpo.com/2016/07/20/how-wasteful-are-we-the-fashion-industrys-shocking-truth/" target="_blank">(www.edgexpo.com)</a>
+          </div>
+          <!-- action buttons -->
+          <div class="actions">
+              <a class="actions-link" href="/footwear">SHOP FOOTWEAR</a>
+              <a class="actions-link" href="/clothing">SHOP CLOTHING</a> <br>
+              <a class="actions-link" href="/footwear/new">SELL FOOTWEAR</a>
+              <a class="actions-link" href="/clothing/new">SELL CLOTHING</a>
+          </div>
+        </div>
       </div>
+      <footer>
+        <% include partials/footer.ejs %>
+      </footer>
   </body>
 </html>

@@ -4,6 +4,7 @@ body {
 }
 a {
   text-decoration: none;
+  color: #4d4d00;
 }
 a:hover {
   text-decoration: underline;
@@ -24,8 +25,46 @@ nav {
   padding: 0.5em;
   border:
 }
-.homepage-epa {
+/* index.ejs */
+.name {
+  font-size: 3em;
+}
+.homepage-center {
+  display: flex;
+  flex-direction: row;
+  flex-grow: wrap;
+}
+.stats {
   border: 1px #39ac39 solid;
   padding: 1em;
   margin: 1em 2em;
+  font-size: 1.5em;
+}
+.call2action{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #4d4d00;
+}
+.actions {
+  width: 80%;
+  margin: 0 auto;
+}
+.actions-link {
+  display: inline-flex;
+  border: 1px #4d4d00 solid;
+  border-radius: 5px;
+  box-shadow: 1px 5px #4d4d00;
+  font-size: 1.5em;
+  padding: .5em;
+  margin: 1em 2em;
+  background-color: #FFFF00;
+  color: #4d4d00;
+}
+footer {
+  background-color: #39ac39;
+  margin: 0;
+  padding: 0.5em;
+  text-align: center;
+  color: #f2f2f2;
 }
