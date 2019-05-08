@@ -13,28 +13,36 @@
       <a class="nav-link" href="/footwear/new">NEW LISTING</a>
       <a class="nav-link" href="/footwear/<%=shoes.id%>/edit" class="nav-btn">EDIT LISTING</a>
     </nav>
-    <div class="product-container">
-      <div class="item-info">
-        <h3>Style: <%=shoes.style%></h3>
-        <h3><%=shoes.gender%></h3>
-        <h3><%=shoes.brand%></h3>
-        <h3><%=shoes.model%></h3>
-        <img src="<%=shoes.imageURL%>" alt="Picture of <%=shoes.model%>">
-        <h4>Size: <%=shoes.size%></h4>
-        <h4>Price: $<%=shoes.price%></h4>
-        <h4>Qty Available: <%=shoes.quantity%></h4>
-
-      <form action="/footwear/<%=shoes.id%>?_method=DELETE" method="POST">
-        <input class="submit-btn" type="submit" value="DELETE" />
-      </form>
-      <% if ( shoes.quantity > 0) { %>
-        <form action="/footwear/add/<%=shoes.id%>?_method=PUT" method="POST">
-          <input class="submit-btn" type="submit" value="ADD TO CART" >
+    <div class="product">
+      <div class="product-container">
+        <div class="left">
+          <h3><em>Style: </em><%=shoes.style%></h3>
+          <h3><em>Gender: </em><%=shoes.gender%></h3>
+          <h3><em>Brand: </em><%=shoes.brand%></h3>
+          <h3><em>Model: </em><%=shoes.model%></h3>
+        </div>
+          <img src="<%=shoes.imageURL%>" alt="Picture of <%=shoes.model%>">
+        <div class="right">
+          <h4><em>Size: </em><%=shoes.size%></h4>
+          <h4><em>Price: </em>$<%=shoes.price%></h4>
+          <h4><em>Qty Available: </em><%=shoes.quantity%></h4>
+        </div>
+      </div>
+      <div class="form-btns">
+        <form action="/footwear/<%=shoes.id%>?_method=DELETE" method="POST">
+          <input class="submit-btn" type="submit" value="DELETE" />
         </form>
-        <% } else { %>
-          <h3>Out Of Stock</h3>
-        <% } %>
+        <% if ( shoes.quantity > 0) { %>
+          <form action="/footwear/add/<%=shoes.id%>?_method=PUT" method="POST">
+            <input class="submit-btn" type="submit" value="ADD TO CART" >
+          </form>
+          <% } else { %>
+            <h3>Out Of Stock</h3>
+          <% } %>
       </div>
     </div>
+    <footer>
+      <% include ../partials/footer.ejs %>
+    </footer>
   </body>
 </html>
