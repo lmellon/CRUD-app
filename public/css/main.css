@@ -1,3 +1,4 @@
+/* styling for items accross all pages */
 body {
   background-color: #f2f2f2;
   margin: 0;
@@ -23,7 +24,14 @@ nav {
 .nav-link {
   color: #39ac39;
   padding: 0.5em;
-  border:
+  font-size: 1.25em;
+}
+footer {
+  background-color: #39ac39;
+  margin: 0;
+  padding: 0.5em;
+  text-align: center;
+  color: #f2f2f2;
 }
 /* index.ejs */
 .name {
@@ -61,10 +69,20 @@ nav {
   background-color: #FFFF00;
   color: #4d4d00;
 }
-footer {
-  background-color: #39ac39;
-  margin: 0;
-  padding: 0.5em;
+/* gallery pages */
+.item-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #f2f2f2;
+}
+.item {
+  border: 1px #39ac39 solid;
+  border-radius: 5px;
+  color: #4d4d00;
   text-align: center;
-  color: #f2f2f2;
+  background-color: white;
+  padding: .25em 0;
+  margin: 1em;
 }

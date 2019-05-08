@@ -5,27 +5,28 @@
   </head>
   <body>
     <header>
-      <h1>Footwear Index page</h1>
+      <h1>Footwear Gallery</h1>
     </header>
     <nav>
       <a class="nav-link" href="/">HOME</a>
       <a class="nav-link" href="/footwear/new">NEW LISTING</a>
     </nav>
-    <div>
-      Filter by: <a href="/footwear/mens">MEN'S</a>
-    </div>
-    <div class="container">
+    <!-- container for item and its info -->
+    <div class="item-container">
       <% for (let i = 0; i < products.length; i ++) { %>
-        <div class="product">
+        <div class="item">
           <a href="/footwear/<%=products[i].id%>">
-          <h3><%= products[i].brand%></h3>
-          <h3><%= products[i].model%></h3>
+          <h3><%= products[i].gender%>
+            <%= products[i].brand%>
+            <%= products[i].model%></h3>
           <img src="<%= products[i].imageURL%>" alt="Picture of shoe">
           <h4>Price: $<%= products[i].price%></h4>
           </a>
         </div>
       <%}%>
-
     </div>
+    <footer>
+      <% include ../partials/footer.ejs %>
+    </footer>
   </body>
 </html>
