@@ -11,41 +11,47 @@
       <a class="nav-link" href="/">HOME</a>
       <a class="nav-link" href="/footwear">GALLERY</a>
     </nav>
-    <form class="" action="/footwear" method="POST">
-      <label>
-        Style
-        <input type="text" name="style" value="">
-      </label>
-      <label>
-        Gender
-        <input type="text" name="gender" value="">
-      </label>
-      <label>
-        Brand
-        <input type="text" name="brand" value="">
-      </label>
-      <label>
-        Model
-        <input type="text" name="model" value="">
-      </label>
-      <label>
-        Image URL
-        <input type="text" name="imageURL" value="">
-      </label>
-      <label>
-        Size
-        <input type="text" name="size" value="">
-      </label>
-      <label>
-        Price
-        <input type="text" name="price" value="">
-      </label>
-      <label>
-        Quantity
-        <input type="text" name="quantity" value="">
-      </label>
-    <input class="submit-btn" type="submit" value="Create Listing">
-    </form>
-
+    <div class="new-container">
+      <form class="new-form" action="/footwear" method="POST">
+        <label>
+          Style
+          <input type="text" name="style" value="">
+        </label>
+        <label>
+          Gender
+          <input type="text" name="gender" value="">
+        </label>
+        <label>
+          Brand
+          <input type="text" name="brand" value="">
+        </label>
+        <label>
+          Model
+          <input type="text" name="model" value="">
+        </label><br><br>
+        <label>
+          Image URL
+          <input type="text" name="imageURL" value="">
+        </label>
+        <label>
+          Size
+          <input type="text" name="size" value="">
+        </label>
+        <label>
+          Price
+          <input type="text" name="price" value="">
+        </label>
+        <label>
+          Quantity
+          <input type="text" name="quantity" value="">
+        </label>
+      </form>
+      <div class="new-submit">
+        <input class="submit-btn" type="submit" value="Create Listing">
+      </div>
+    </div>
+    <footer>
+      <% include ../partials/footer.ejs %>
+    </footer>
   </body>
 </html>

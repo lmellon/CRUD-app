@@ -114,8 +114,8 @@ footer {
   margin-right: 2em;
 }
 .product-container > img {
-  max-height: 400px;
-  max-width: 300px;
+  max-height: 450px;
+  max-width: 400px;
 }
 .right {
   color: #4d4d00;
@@ -130,4 +130,21 @@ input {
   box-shadow: 2px 2px #39ac39;
   padding: .5em;
   margin: 1em;
+}
+/* new listing page */
+.new-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  margin: 3em;
+}
+.new-form {
+  width: 75%;
+  margin: 3em;
+}
+
+.new-submit {
+  margin: 3em;
 }
