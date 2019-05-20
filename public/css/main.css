@@ -167,3 +167,64 @@ input {
 .row {
   margin: 2em;
 }
+
+@media (max-width: 600px) {
+    /* Homepage */
+    .homepage-center {
+      display: flex;
+      flex-direction: column;
+    }
+    .homepage-center > img {
+        width: 100%;
+        height: auto;
+    }
+    .stats {
+      border: 1px #39ac39 solid;
+      padding: 1em;
+      margin: 0.5em 1em;
+      font-size: 1.25em;
+    }
+    nav {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+    }
+    /* gallery pages */
+    .page {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    .sidebar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .item-container {
+      display: flex;
+      flex-direction: column;
+      /* flex-wrap: wrap; */
+      justify-content: space-around;
+      width: 95%;
+    }
+    .item {
+     width: 100%;
+    }
+    img {
+        width: 90%;
+        height: auto;
+    }
+    /* details page */
+    .product-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .left {
+        margin: 0.5em;
+    }
+    .right {
+        margin: 0.5em;
+    }
+}
